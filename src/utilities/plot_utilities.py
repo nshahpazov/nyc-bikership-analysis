@@ -1,7 +1,13 @@
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from plotnine import ggplot, aes, geom_bar, xlab, ylab
+
+# TODO: make this dynamic and not hard corded
+
+# constants
+START = '2016-01-31'
+END = '2016-03-01'
+
 
 def plot_bikers_count_by_temp(bikes_df, weather_df, field, nbins=5):
     # construct lowest and highest temperatures
@@ -17,15 +23,15 @@ def plot_bikers_count_by_temp(bikes_df, weather_df, field, nbins=5):
 
     # count, normalize and plot
     return (temp_ranges.value_counts()
-        .div(number_of_ranges)
-        .reset_index()
-        .rename(columns={'index': 'temp_range'})
-        .pipe((sns.barplot, 'data'), x='temp_range', y=field))
+     .div(number_of_ranges)
+     .reset_index()
+     .rename(columns={'index': 'temp_range'})
+     .pipe(ggplot) +
+        aes(x='temp_range', y=field) +
+        geom_bar(stat='identity', fill='#2a9d8f', alpha=0.6)
+    )
 
 
-# TOOD: make this dynamic and not hard corded
-START = '2016-01-31'
-END = '2016-03-01'
 
 def plot_average_rides_count_per_week(df, usertype):
     start_times = df[df.usertype == usertype]['starttime']
