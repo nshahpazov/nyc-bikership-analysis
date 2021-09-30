@@ -2,8 +2,6 @@ import numpy as np
 import pandas as pd
 from plotnine import ggplot, aes, geom_bar, xlab, ylab
 
-# TODO: make this dynamic and not hard corded
-
 # constants
 START = '2016-01-31'
 END = '2016-03-01'
@@ -34,8 +32,8 @@ def plot_bikers_count_by_temp(bikes_df, weather_df, field, nbins=5):
 
 
 def plot_average_rides_count_per_week(df, usertype):
-    start_times = df[df.usertype == usertype]['starttime']
-    ride_counts = start_times.dt.day_name().value_counts()
+    df = df[df.usertype == usertype]
+    ride_counts = df['day_name'].value_counts()
 
     days_count = (ride_counts
      .index

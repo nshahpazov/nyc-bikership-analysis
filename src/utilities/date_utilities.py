@@ -1,17 +1,12 @@
 # load required packages
 import pandas as pd
-from dotenv import find_dotenv, load_dotenv
-import os
-
-# load .env environment variables
-load_dotenv(find_dotenv())
 
 # env constants
-RIDES_YEAR = os.environ.get('RIDES_YEAR')
-RIDES_MONTH = os.environ.get('RIDES_MONTH')
-RIDES_NEXT_MONTH = os.environ.get('RIDES_NEXT_MONTH')
-START_TIME_COL = os.environ.get('START_TIME_COL')
-STOP_TIME_COL = os.environ.get('STOP_TIME_COL')
+RIDES_YEAR = '2016'
+RIDES_MONTH = '2'
+RIDES_NEXT_MONTH = '3'
+START_TIME_COL = 'starttime'
+STOP_TIME_COL = 'stoptime'
 
 TIME_COLUMNS = [START_TIME_COL, STOP_TIME_COL]
 
@@ -20,8 +15,8 @@ INVALID_DATE_EXCEPTION_MSG = "Start and end dates are not all in the correct for
 
 # regex and format constants
 CORRECT_DATE_FORMAT = "%m/%d/%Y %H:%M:%S"
-START_REGEX = r'' + str(RIDES_MONTH) + '\/[0-9]{1,2}\/' + str(RIDES_YEAR)
-STOP_REGEX = r'[' + str(RIDES_MONTH) + '-' + str(RIDES_NEXT_MONTH) + ']\/[0-9]{1,2}\/' + str(RIDES_YEAR)
+START_REGEX = r'' + RIDES_MONTH + '\/[0-9]{1,2}\/' + RIDES_YEAR
+STOP_REGEX = r'[' + RIDES_MONTH + '-' + RIDES_NEXT_MONTH + ']\/[0-9]{1,2}\/' + RIDES_YEAR
 
 def is_bike_time_correct(time_series):
     is_start = time_series.name == START_TIME_COL

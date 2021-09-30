@@ -1,16 +1,9 @@
-# load required packages
-from dotenv import find_dotenv, load_dotenv
-import os
-
-# load .env environment variables
-load_dotenv(find_dotenv())
 
 # env constants
-RIDES_YEAR = os.environ.get('RIDES_YEAR')
-RIDES_MONTH = os.environ.get('RIDES_MONTH')
-RIDES_NEXT_MONTH = os.environ.get('RIDES_NEXT_MONTH')
-START_TIME_COL = os.environ.get('START_TIME_COL')
-STOP_TIME_COL = os.environ.get('STOP_TIME_COL')
+RIDES_YEAR = 2016
+
+START_TIME_COL = 'starttime'
+STOP_TIME_COL = 'stoptime'
 
 def cast_bike_types(bikes_df):
     # cast the birth year to a correct format
@@ -39,7 +32,7 @@ def attach_additional_bike_columns(bikes_df):
     bikes_df['stop_minute'] = bikes_df[STOP_TIME_COL].dt.minute
 
     # add an age column
-    bikes_df['age'] = int(RIDES_YEAR) - bikes_df['birth year']
+    bikes_df['age'] = RIDES_YEAR - bikes_df['birth year']
 
     # add additional columns for duration (minutes and hours)
     bikes_df['tripduration_minutes'] = bikes_df['tripduration'] / 60
