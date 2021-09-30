@@ -9,7 +9,7 @@ Over all the data set folder used in the project can be found [here](https://dri
 
 **The analysis is divided in 4 parts**:
 
-* Initial Data Analysis (IDA) in which we explore data quality
-* Exploratory Data Analysis (EDA) on the available biker data
-* Weather Data Analysis (WDA) in which we explore some replationships with weather
-* Spatial Data Analysis (SDA) on the available coordinates we have, but also joining with a NYC neighbourhoods data
+* Initial Data Analysis (**IDA**) in which we explore data quality
+* Exploratory Data Analysis (**EDA**) on the available biker data
+* Weather Data Analysis in which we explore some replationships with weather
+* Spatial Data Analysis (**SDA**) on the available coordinates we have, but also joining with a NYC neighbourhoods data
