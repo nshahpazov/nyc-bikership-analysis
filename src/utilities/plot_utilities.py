@@ -7,7 +7,7 @@ START = '2016-01-31'
 END = '2016-03-01'
 
 
-def plot_bikers_count_by_temp(bikes_df, weather_df, field, nbins=5):
+def plot_bikers_count_by_temp(bikes_df, weather_df, field, nbins=5, barwidth=1):
     # construct lowest and highest temperatures
     low = bikes_df[field].min()
     high = bikes_df[field].max()
@@ -26,7 +26,7 @@ def plot_bikers_count_by_temp(bikes_df, weather_df, field, nbins=5):
      .rename(columns={'index': 'temp_range'})
      .pipe(ggplot) +
         aes(x='temp_range', y=field) +
-        geom_bar(stat='identity', fill='#2a9d8f', alpha=0.6)
+        geom_bar(stat='identity', fill='#2a9d8f', alpha=0.6, width=barwidth)
     )
 
 

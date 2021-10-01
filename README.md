@@ -9,7 +9,12 @@ The bikers data can be downloaded from here [here](https://s3.amazonaws.com/trip
 The bikership data is joined with a weather dataset which can be found 
 [here](https://www.kaggle.com/mathijs/weather-data-in-new-york-city-2016) 
 
-Over all the data set folder used in the project can be found [here](https://drive.google.com/file/d/1aH9D6ZCgwZakcLUqe5cVUVScOA93L3qc/view?usp=sharing)
+Overall the data set folder used in the project can be found [here](https://drive.google.com/file/d/1aH9D6ZCgwZakcLUqe5cVUVScOA93L3qc/view?usp=sharing)
+
+### Setup
+
+* The code uses Python v3.9.2
+* To install the required packages run python `pip install -r requirements.txt`
 
 ### **The Analysis**
 
