@@ -25,4 +25,4 @@ Overall the data set folder used in the project can be found [here](https://driv
 * Weather Data Analysis in which we explore some replationships with weather
 * Spatial Data Analysis (**SDA**) on the available coordinates we have, but also joining with a NYC neighbourhoods data
 
-### ** NB: The Spatial Analysis would have to be opened locally in order for the visualizations to show.**
+### **NB: The Spatial Analysis would have to be opened locally in order for the visualizations to show.**
